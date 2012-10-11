@@ -62,9 +62,10 @@ namespace LibGit2Sharp.Tests
         }
 
         [Theory]
-        [InlineData("http://github.com/nulltoken/TestGitRepository")]
-        [InlineData("https://github.com/nulltoken/TestGitRepository")]
-        //[InlineData("git@github.com:nulltoken/TestGitRepository")]
+        [InlineData("http://github.com/libgit2/TestGitRepository")]
+        [InlineData("https://github.com/libgit2/TestGitRepository")]
+        [InlineData("git://github.com/nulltoken/TestGitRepository")]
+        //[InlineData("git@github.com:libgit2/TestGitRepository")]
         public void CanCloneARepository(string url)
         {
             var scd = BuildSelfCleaningDirectory();
@@ -85,9 +86,10 @@ namespace LibGit2Sharp.Tests
         }
 
         [Theory]
-        [InlineData("http://github.com/nulltoken/TestGitRepository")]
-        [InlineData("https://github.com/nulltoken/TestGitRepository")]
-        //[InlineData("git@github.com:nulltoken/TestGitRepository")]
+        [InlineData("http://github.com/libgit2/TestGitRepository")]
+        [InlineData("https://github.com/libgit2/TestGitRepository")]
+        [InlineData("git://github.com/libgit2/TestGitRepository")]
+        //[InlineData("git@github.com:libgit2/TestGitRepository")]
         public void CanCloneARepositoryBarely(string url)
         {
             var scd = BuildSelfCleaningDirectory();
