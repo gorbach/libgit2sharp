@@ -80,7 +80,7 @@ namespace LibGit2Sharp.Tests
                 Assert.False(repo.Info.IsBare);
 
                 AssertIsHidden(repo.Info.Path);
-                Assert.True(File.Exists(Path.Combine(scd.RootedDirectoryPath, "readme.md")));
+                Assert.True(File.Exists(Path.Combine(scd.RootedDirectoryPath, "master.txt")));
             }
         }
 
