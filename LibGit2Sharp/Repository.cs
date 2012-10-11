@@ -400,9 +400,12 @@ namespace LibGit2Sharp
             string destination,
             GitIndexerStats fetch_stats = null,
             GitIndexerStats checkout_stats = null,
-            GitCheckoutOptions checkout_options = null,
+            CheckoutOptions checkoutOptions = null,
             bool isBare = false)
         {
+            checkoutOptions = checkoutOptions ?? new CheckoutOptions();
+            GitCheckoutOptions checkout_options = checkoutOptions.checkoutOptions;
+
             RepositorySafeHandle repo;
             int res;
             if (isBare)

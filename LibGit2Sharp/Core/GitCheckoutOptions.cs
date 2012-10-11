@@ -1,21 +1,20 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace LibGit2Sharp.Core
 {
-    public enum ExistingFileAction
-    {
-        OverwriteExisting = 0,
-        SkipExisting = 1,
-    }
-
     [StructLayout(LayoutKind.Sequential)]
-    public class GitCheckoutOptions
+    internal class GitCheckoutOptions
     {
-        public ExistingFileAction ExistingFileAction;
-        [MarshalAs(UnmanagedType.SysInt)]
-        public bool DisableFilters;
+        public uint CheckoutStrategy;
+        public int DisableFilters;
         public int DirMode;
         public int FileMode;
         public int FileOpenFlags;
+
+        public IntPtr SkippedNotifyCallback;
+        public IntPtr NotifyPayload;
+
+        public IntPtr Paths;
     }
 }
